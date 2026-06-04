@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 export function Hero() {
@@ -7,60 +8,74 @@ export function Hero() {
       <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[#C9952A]/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-white/3 blur-3xl pointer-events-none" />
 
-      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="max-w-3xl">
+      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Badge de confiança */}
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-            <span className="text-white/85 text-sm font-medium tracking-wide">
-              Correspondente Bancário Autorizado
-            </span>
+          {/* Coluna esquerda — texto */}
+          <div>
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl text-white font-bold leading-tight mb-6">
+              Crédito Consignado com{" "}
+              <span className="text-[#C9952A]">Aprovação Rápida</span>{" "}
+              e as Menores Taxas
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-lg text-white/75 leading-relaxed mb-10 max-w-lg">
+              Atendemos Aposentados do INSS, Servidores Públicos, Militares e
+              Trabalhadores CLT. Taxa justa, sem burocracia e atendimento humano de verdade.
+            </p>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <a
+                href={getWhatsAppUrl("hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#22C55E] active:bg-[#16A34A] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              >
+                <WhatsAppIcon />
+                Consultar Agora pelo WhatsApp
+              </a>
+              <p className="text-white/50 text-sm">Gratuito · Sem compromisso</p>
+            </div>
+
+            {/* Indicadores rápidos */}
+            <div className="mt-12 flex flex-wrap gap-5 border-t border-white/10 pt-10">
+              {["Aprovação rápida", "100% digital", "Atendimento humano", "Menor taxa"].map((label) => (
+                <div key={label} className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-[#C9952A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-white/70 text-sm">{label}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mb-6">
-            Crédito Consignado com{" "}
-            <span className="text-[#C9952A]">Aprovação Rápida</span>{" "}
-            e as Menores Taxas
-          </h1>
+          {/* Coluna direita — imagem (visível só no desktop) */}
+          <div className="hidden lg:flex justify-center items-center">
+            <div className="relative">
+              {/* Brilho dourado atrás da imagem */}
+              <div className="absolute -inset-4 rounded-3xl bg-[#C9952A]/15 blur-2xl" />
 
-          {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-white/75 leading-relaxed mb-10 max-w-2xl">
-            Atendemos Aposentados do INSS, Servidores Públicos, Militares e
-            Trabalhadores CLT. Taxa justa, sem burocracia e atendimento humano de verdade.
-          </p>
+              <Image
+                src="/hero-aposentado.jpg"
+                alt="Aposentado feliz após contratar crédito consignado"
+                width={480}
+                height={560}
+                className="relative rounded-3xl object-cover shadow-2xl"
+                priority
+              />
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-            <a
-              href={getWhatsAppUrl("hero")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#22C55E] active:bg-[#16A34A] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-            >
-              <WhatsAppIcon />
-              Consultar Agora pelo WhatsApp
-            </a>
-            <p className="text-white/50 text-sm">Gratuito · Sem compromisso</p>
-          </div>
-
-          {/* Indicadores rápidos */}
-          <div className="mt-14 flex flex-wrap gap-6 border-t border-white/10 pt-10">
-            {[
-              { label: "Aprovação rápida" },
-              { label: "100% digital" },
-              { label: "Atendimento humano" },
-              { label: "Menor taxa" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#C9952A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-white/70 text-sm">{item.label}</span>
+              {/* Card flutuante sobre a imagem */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl px-5 py-3 shadow-xl whitespace-nowrap">
+                <p className="text-[#0F2647] font-bold text-sm">✅ Aprovação em minutos</p>
+                <p className="text-[#718096] text-xs mt-0.5">Sem sair de casa · 100% pelo celular</p>
               </div>
-            ))}
+            </div>
           </div>
+
         </div>
       </div>
     </section>
