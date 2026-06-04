@@ -1,0 +1,55 @@
+{
+  "project": "MajorFinanceira",
+  "version": "1.0",
+  "personality": "Segurança + Acolhimento — Banco que parece gente",
+
+  "colors": {
+    "primary":       "#0F2647",
+    "primaryLight":  "#1A3A6B",
+    "primaryDark":   "#091929",
+    "accent":        "#C9952A",
+    "accentLight":   "#E0AE4A",
+    "accentDark":    "#A87820",
+    "background":    "#FAFAF8",
+    "surface":       "#FFFFFF",
+    "surfaceAlt":    "#F0F4F9",
+    "foreground":    "#0D1B2E",
+    "muted":         "#4A5568",
+    "subtle":        "#718096",
+    "border":        "#D1DCE8",
+    "success":       "#16A34A",
+    "whatsapp":      "#25D366",
+    "whatsappDark":  "#128C7E"
+  },
+
+  "typography": {
+    "display": "Fraunces",
+    "body":    "DM Sans",
+    "weights": {
+      "light":      300,
+      "regular":    400,
+      "medium":     500,
+      "semibold":   600,
+      "bold":       700,
+      "black":      900
+    }
+  },
+
+  "spacing": {
+    "base": "8px",
+    "scale": [8, 16, 24, 32, 48, 64, 96, 128]
+  },
+
+  "borderRadius": {
+    "sm":   "6px",
+    "md":   "12px",
+    "lg":   "20px",
+    "full": "9999px"
+  },
+
+  "shadows": {
+    "sm": "0 1px 3px rgba(15,38,71,0.08)",
+    "md": "0 4px 16px rgba(15,38,71,0.12)",
+    "lg": "0 12px 40px rgba(15,38,71,0.16)"
+  }
+}
