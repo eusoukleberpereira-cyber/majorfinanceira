@@ -34,7 +34,7 @@ export function Hero() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <a
-              href={getWhatsAppUrl("Hero")}
+              href={getWhatsAppUrl("hero")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#22C55E] active:bg-[#16A34A] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"

@@ -3,7 +3,7 @@ import { getWhatsAppUrl } from "@/lib/constants";
 export function WhatsAppButton() {
   return (
     <a
-      href={getWhatsAppUrl("Botão Flutuante")}
+      href={getWhatsAppUrl("flutuante")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar pelo WhatsApp"
