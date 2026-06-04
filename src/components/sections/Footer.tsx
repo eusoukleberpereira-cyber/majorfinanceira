@@ -2,7 +2,7 @@ const anoAtual = new Date().getFullYear();
 
 export function Footer() {
   return (
-    <footer className="bg-[#091929] py-10">
+    <footer className="bg-[#6B4E00] py-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">

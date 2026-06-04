@@ -34,7 +34,7 @@ export function Publicos() {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#C9960A] font-semibold text-sm uppercase tracking-widest mb-3">
             Atendimento personalizado
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
@@ -57,7 +57,7 @@ export function Publicos() {
                 <div className="w-12 h-12 rounded-xl bg-[#0F2647]/8 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-[#0F2647]" strokeWidth={1.5} />
                 </div>
-                <p className="text-[#C9952A] text-xs font-semibold uppercase tracking-wider mb-1">
+                <p className="text-[#C9960A] text-xs font-semibold uppercase tracking-wider mb-1">
                   {item.subtitulo}
                 </p>
                 <h3 className="text-[#0F2647] font-bold text-lg leading-snug mb-2">

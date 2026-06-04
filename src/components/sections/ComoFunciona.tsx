@@ -31,7 +31,7 @@ export function ComoFunciona() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#C9960A] font-semibold text-sm uppercase tracking-widest mb-3">
             Sem complicação
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">

@@ -27,18 +27,18 @@ const vantagens = [
 
 export function Vantagens() {
   return (
-    <section className="bg-[#0F2647] py-20 sm:py-24">
+    <section className="bg-[#C9960A] py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
             Nossas vantagens
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1200]">
             Por Que Escolher a MajorFinanceira?
           </h2>
-          <p className="mt-4 text-white/60 text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-[#1A1200]/65 text-lg max-w-xl mx-auto">
             Mais do que crédito — uma experiência de atendimento que respeita você.
           </p>
         </div>
@@ -48,21 +48,20 @@ export function Vantagens() {
           {vantagens.map((item) => (
             <div
               key={item.titulo}
-              className="flex gap-4 bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors duration-200"
+              className="flex gap-4 bg-white/15 border border-white/20 rounded-2xl p-6 hover:bg-white/22 transition-colors duration-200"
             >
-              {/* Checkmark */}
               <div className="shrink-0 mt-0.5">
-                <div className="w-6 h-6 rounded-full bg-[#C9952A]/20 flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 text-[#C9952A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <div className="w-6 h-6 rounded-full bg-[#0F2647]/15 flex items-center justify-center">
+                  <svg className="w-3.5 h-3.5 text-[#0F2647]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
               </div>
               <div>
-                <h3 className="text-white font-semibold text-base leading-snug mb-1">
+                <h3 className="text-[#1A1200] font-semibold text-base leading-snug mb-1">
                   {item.titulo}
                 </h3>
-                <p className="text-white/55 text-sm leading-relaxed">{item.descricao}</p>
+                <p className="text-[#1A1200]/60 text-sm leading-relaxed">{item.descricao}</p>
               </div>
             </div>
           ))}

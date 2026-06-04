@@ -3,17 +3,16 @@
 /* ─── Design Tokens — MajorFinanceira ─── */
 :root {
   /* Cores principais */
-  --color-primary:        #0F2647;  /* Azul profundo */
-  --color-primary-light:  #1A3A6B;  /* Azul médio (hover) */
-  --color-primary-dark:   #091929;  /* Azul escuro */
-  --color-accent:         #C9952A;  /* Dourado quente */
-  --color-accent-light:   #E0AE4A;  /* Dourado claro (hover) */
-  --color-accent-dark:    #A87820;  /* Dourado escuro */
+  --color-primary:        #C9960A;  /* Amarelo mostarda */
+  --color-primary-light:  #E0AE2A;  /* Mostarda claro (hover) */
+  --color-primary-dark:   #8B6500;  /* Mostarda escuro */
+  --color-navy:           #0F2647;  /* Azul navy (texto e detalhes) */
+  --color-accent:         #0F2647;  /* Acento navy */
 
   /* Backgrounds */
   --color-background:     #FAFAF8;  /* Branco creme */
   --color-surface:        #FFFFFF;  /* Branco puro (cards) */
-  --color-surface-alt:    #F0F4F9;  /* Azul muito claro (seções alt) */
+  --color-surface-alt:    #FDF8EC;  /* Creme quente (seções alt) */
 
   /* Texto */
   --color-foreground:     #0D1B2E;  /* Quase preto azulado */

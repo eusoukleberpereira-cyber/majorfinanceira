@@ -45,7 +45,7 @@ export function FAQ() {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#C9960A] font-semibold text-sm uppercase tracking-widest mb-3">
             Tire suas dúvidas
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
@@ -57,7 +57,7 @@ export function FAQ() {
               href={getWhatsAppUrl("faq")}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0F2647] font-semibold underline underline-offset-2 hover:text-[#C9952A] transition-colors"
+              className="text-[#0F2647] font-semibold underline underline-offset-2 hover:text-[#C9960A] transition-colors"
             >
               Fale com um especialista.
             </a>
@@ -76,7 +76,7 @@ export function FAQ() {
                   {item.pergunta}
                 </span>
                 <svg
-                  className="w-5 h-5 text-[#C9952A] shrink-0 transition-transform duration-200 group-open:rotate-180"
+                  className="w-5 h-5 text-[#C9960A] shrink-0 transition-transform duration-200 group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

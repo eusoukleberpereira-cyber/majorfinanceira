@@ -3,25 +3,23 @@ import { getWhatsAppUrl } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="relative bg-[#0F2647] min-h-[88vh] flex items-center overflow-hidden">
+    <section className="relative bg-[#C9960A] min-h-[88vh] flex items-center overflow-hidden">
       {/* Decoração de fundo */}
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[#C9952A]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-white/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-white/8 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#0F2647]/10 blur-3xl pointer-events-none" />
 
       <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Coluna esquerda — texto */}
           <div>
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl text-white font-bold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl text-[#1A1200] font-bold leading-tight mb-6">
               Crédito Consignado com{" "}
-              <span className="text-[#C9952A]">Aprovação Rápida</span>{" "}
+              <span className="text-white">Aprovação Rápida</span>{" "}
               e as Menores Taxas
             </h1>
 
-            {/* Subheadline */}
-            <p className="text-lg text-white/75 leading-relaxed mb-10 max-w-lg">
+            <p className="text-lg text-[#1A1200]/70 leading-relaxed mb-10 max-w-lg">
               Atendemos Aposentados do INSS, Servidores Públicos, Militares e
               Trabalhadores CLT. Taxa justa, sem burocracia e atendimento humano de verdade.
             </p>
@@ -32,43 +30,39 @@ export function Hero() {
                 href={getWhatsAppUrl("hero")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#22C55E] active:bg-[#16A34A] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center gap-3 bg-[#0F2647] hover:bg-[#1A3A6B] active:bg-[#091929] text-white font-semibold text-lg px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 <WhatsAppIcon />
                 Consultar Agora pelo WhatsApp
               </a>
-              <p className="text-white/50 text-sm">Gratuito · Sem compromisso</p>
+              <p className="text-[#1A1200]/50 text-sm">Gratuito · Sem compromisso</p>
             </div>
 
             {/* Indicadores rápidos */}
-            <div className="mt-12 flex flex-wrap gap-5 border-t border-white/10 pt-10">
+            <div className="mt-12 flex flex-wrap gap-5 border-t border-[#1A1200]/15 pt-10">
               {["Aprovação rápida", "100% digital", "Atendimento humano", "Menor taxa"].map((label) => (
                 <div key={label} className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-[#C9952A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-white/70 text-sm">{label}</span>
+                  <span className="text-[#1A1200]/75 text-sm">{label}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Coluna direita — imagem (visível só no desktop) */}
+          {/* Coluna direita — imagem */}
           <div className="hidden lg:flex justify-center items-center">
             <div className="relative">
-              {/* Brilho dourado atrás da imagem */}
-              <div className="absolute -inset-4 rounded-3xl bg-[#C9952A]/15 blur-2xl" />
-
+              <div className="absolute -inset-4 rounded-3xl bg-white/20 blur-2xl" />
               <Image
                 src="/hero-aposentado.jpg"
-                alt="Aposentado feliz após contratar crédito consignado"
+                alt="Aposentada feliz após contratar crédito consignado"
                 width={480}
                 height={560}
                 className="relative rounded-3xl object-cover shadow-2xl"
                 priority
               />
-
-              {/* Card flutuante sobre a imagem */}
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl px-5 py-3 shadow-xl whitespace-nowrap">
                 <p className="text-[#0F2647] font-bold text-sm">✅ Aprovação em minutos</p>
                 <p className="text-[#718096] text-xs mt-0.5">Sem sair de casa · 100% pelo celular</p>
