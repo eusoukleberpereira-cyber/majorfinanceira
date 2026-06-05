@@ -1,114 +1,62 @@
-import Image from "next/image";
-import { getWhatsAppUrl } from "@/lib/constants";
+import { Simulator } from "@/components/ui/Simulator";
 
 export function Hero() {
   return (
-    <section className="bg-[#0F2647] py-16 sm:py-20 lg:py-24 overflow-hidden relative">
-      {/* Decoração de fundo sutil */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-white/3 blur-3xl pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-14 sm:py-18 lg:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Esquerda — texto */}
           <div>
-            <span className="inline-block bg-[#C9952A]/20 text-[#C9952A] text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6 border border-[#C9952A]/30">
-              Correspondente Bancário Autorizado
-            </span>
-
-            <h1 className="text-4xl sm:text-5xl xl:text-[3.25rem] font-bold text-white leading-[1.15] mb-5">
-              Seu salário e sua margem valem mais no{" "}
-              <span className="text-[#C9952A]">Consignado Major!</span>
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#1A1A1A] leading-[1.15] mb-5">
+              Empréstimo Consignado INSS:{" "}
+              <span className="text-[#FF7A00]">simplicidade e segurança para você!</span>
             </h1>
 
-            <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
-              Simples, rápido e com as menores taxas do mercado. Atendemos Aposentados,
-              Pensionistas, Servidores Públicos, Militares e CLT.
+            <p className="text-lg text-[#666] leading-relaxed mb-8 max-w-xl">
+              Simule, contrate e acompanhe tudo pelo celular, sem sair de casa.
+              Sem burocracia, com as menores taxas e atendimento humano de verdade.
             </p>
 
-            <div className="flex flex-wrap gap-8 mb-10 pb-10 border-b border-white/10">
+            <ul className="space-y-3 mb-8">
               {[
-                { value: "Até 35%", label: "da margem disponível" },
+                "Parcelas descontadas direto no benefício",
+                "Dinheiro na conta em até 5 dias úteis",
+                "18+ bancos parceiros para a melhor condição",
+                "Nome negativado pode contratar",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-[#1A1A1A] text-base">
+                  <div className="w-5 h-5 rounded-full bg-[#FF7A00] flex items-center justify-center shrink-0">
+                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-wrap gap-8 pt-6 border-t border-gray-100">
+              {[
+                { value: "Até 35%", label: "da margem consignável" },
                 { value: "Até 84x", label: "parcelas no INSS" },
-                { value: "1 a 5 dias", label: "dinheiro na conta" },
+                { value: "18+", label: "bancos parceiros" },
               ].map((stat) => (
-                <div key={stat.label} className="flex flex-col">
-                  <span className="text-2xl font-bold text-white">{stat.value}</span>
-                  <span className="text-xs text-white/50 mt-0.5">{stat.label}</span>
+                <div key={stat.label}>
+                  <p className="text-2xl font-bold text-[#FF7A00]">{stat.value}</p>
+                  <p className="text-xs text-[#999] mt-0.5">{stat.label}</p>
                 </div>
               ))}
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <a
-                href={getWhatsAppUrl("hero")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-[#C9952A] hover:bg-[#e0a830] text-white font-bold text-base px-7 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-              >
-                <WaIcon />
-                Simule seu Consignado!
-              </a>
-              <a
-                href="#como-funciona"
-                className="inline-flex items-center gap-2 text-white/70 hover:text-white font-semibold text-base px-2 py-4 transition-colors"
-              >
-                Como funciona
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
           </div>
 
-          {/* Direita — imagem */}
-          <div className="hidden lg:block relative">
-            <Image
-              src="/hero-aposentado.jpg"
-              alt="Aposentada feliz com crédito consignado aprovado"
-              width={540}
-              height={520}
-              className="w-full h-[500px] object-cover rounded-3xl"
-              priority
-            />
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl px-6 py-4 flex items-center gap-4 whitespace-nowrap">
-              <div className="w-10 h-10 rounded-full bg-[#C9952A]/15 flex items-center justify-center shrink-0">
-                <svg className="w-5 h-5 text-[#C9952A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-[#0F2647] font-bold text-sm">Aprovação rápida</p>
-                <p className="text-gray-500 text-xs">100% pelo celular · Sem sair de casa</p>
-              </div>
-            </div>
+          {/* Direita — simulador */}
+          <div>
+            <Simulator />
           </div>
 
-        </div>
-
-        {/* Linha de confiança */}
-        <div className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6">
-          {[
-            { icon: "🏦", label: "18+ bancos parceiros" },
-            { icon: "📱", label: "100% digital" },
-            { icon: "👤", label: "Atendimento humano" },
-            { icon: "⚡", label: "Resposta no mesmo dia" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2.5">
-              <span className="text-xl">{item.icon}</span>
-              <span className="text-sm text-white/60 font-medium">{item.label}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
-  );
-}
-
-function WaIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
   );
 }

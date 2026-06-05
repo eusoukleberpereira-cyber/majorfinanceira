@@ -19,7 +19,7 @@ const vantagens = [
   {
     icon: Shield,
     titulo: "Análise descomplicada",
-    descricao: "Sem burocracia para contratar o seu Consignado. Aprovação ágil e sem enrolação.",
+    descricao: "Sem burocracia para contratar. Aprovação ágil e atendimento humano de verdade.",
   },
 ];
 
@@ -29,11 +29,11 @@ export function Vantagens() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A]">
             Quais são as vantagens do Crédito Consignado Major?
           </h2>
-          <p className="mt-4 text-gray-500 text-lg max-w-2xl mx-auto">
-            O Crédito Consignado Major foi criado para simplificar a sua vida com taxas justas e facilidade de contratação.
+          <p className="mt-4 text-[#666] text-lg max-w-2xl mx-auto">
+            O Crédito Consignado Major foi criado para simplificar a sua vida com taxas justas e facilidade na contratação.
           </p>
         </div>
 
@@ -41,16 +41,13 @@ export function Vantagens() {
           {vantagens.map((item) => {
             const Icon = item.icon;
             return (
-              <div
-                key={item.titulo}
-                className="flex items-start gap-5 p-7 rounded-2xl border border-gray-100 bg-white hover:shadow-md transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-full bg-[#FBF1DC] flex items-center justify-center shrink-0">
-                  <Icon className="w-7 h-7 text-[#C9952A]" strokeWidth={1.75} />
+              <div key={item.titulo} className="flex items-start gap-5 p-7 rounded-2xl border border-gray-100 hover:shadow-md transition-all duration-200">
+                <div className="w-14 h-14 rounded-full bg-[#FFF3E8] flex items-center justify-center shrink-0">
+                  <Icon className="w-7 h-7 text-[#FF7A00]" strokeWidth={1.75} />
                 </div>
                 <div>
-                  <h3 className="text-[#0F2647] font-bold text-xl mb-2">{item.titulo}</h3>
-                  <p className="text-gray-500 text-base leading-relaxed">{item.descricao}</p>
+                  <h3 className="text-[#1A1A1A] font-bold text-xl mb-2">{item.titulo}</h3>
+                  <p className="text-[#666] text-base leading-relaxed">{item.descricao}</p>
                 </div>
               </div>
             );

@@ -1,18 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary:       #0F2647;
-  --color-primary-hover: #1A3A6B;
-  --color-accent:        #C9952A;
-  --color-accent-light:  #FBF1DC;
+  --color-primary:       #FF7A00;
+  --color-primary-hover: #E56D00;
+  --color-primary-light: #FFF3E8;
+  --color-navy:          #1A1A2E;
   --color-background:    #FFFFFF;
-  --color-surface-alt:   #F5F8FF;
-  --color-foreground:    #111827;
-  --color-muted:         #6B7280;
-  --color-subtle:        #9CA3AF;
-  --color-border:        #E5E7EB;
+  --color-surface-alt:   #F7F7F7;
+  --color-foreground:    #1A1A1A;
+  --color-muted:         #666666;
+  --color-border:        #E5E5E5;
   --color-whatsapp:      #25D366;
-  --color-whatsapp-dark: #1ebe5d;
   --font-display:        var(--font-fraunces);
   --font-body:           var(--font-dm-sans);
 }
@@ -21,7 +19,6 @@
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
   --color-primary:    var(--color-primary);
-  --color-accent:     var(--color-accent);
   --color-muted:      var(--color-muted);
   --color-border:     var(--color-border);
   --font-sans:        var(--font-dm-sans);
@@ -29,12 +26,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: #FFFFFF;
+  color: #1A1A1A;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;

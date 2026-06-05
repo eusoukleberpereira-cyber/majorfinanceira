@@ -6,28 +6,24 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   const links = [
+    { label: "Simulador", href: "#simulador" },
     { label: "O que é", href: "#oqueé" },
     { label: "Vantagens", href: "#vantagens" },
     { label: "Como funciona", href: "#como-funciona" },
-    { label: "Quem pode contratar", href: "#publicos" },
     { label: "FAQ", href: "#faq" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-bold text-[#0F2647]">
-            Major<span className="text-[#C9952A]">Financeira</span>
+          <a href="#" className="text-xl font-bold text-[#1A1A1A]">
+            Major<span className="text-[#FF7A00]">Financeira</span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-7">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm text-gray-600 hover:text-[#0F2647] font-medium transition-colors"
-              >
+              <a key={l.href} href={l.href} className="text-sm text-[#666] hover:text-[#FF7A00] font-medium transition-colors">
                 {l.label}
               </a>
             ))}
@@ -38,16 +34,12 @@ export function Header() {
               href={getWhatsAppUrl("hero")}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#0F2647] hover:bg-[#1A3A6B] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#FF7A00] hover:bg-[#E56D00] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
             >
               <WaIcon />
-              Consultar Grátis
+              Simular Agora
             </a>
-            <button
-              onClick={() => setOpen(!open)}
-              className="lg:hidden p-2 text-gray-600"
-              aria-label="Menu"
-            >
+            <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#666]" aria-label="Menu">
               {open ? <XIcon /> : <BurgerIcon />}
             </button>
           </div>
@@ -56,24 +48,15 @@ export function Header() {
         {open && (
           <div className="lg:hidden py-4 border-t border-gray-100 space-y-1">
             {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block py-2.5 text-gray-700 font-medium text-sm"
-              >
+              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block py-2.5 text-[#666] font-medium text-sm">
                 {l.label}
               </a>
             ))}
             <div className="pt-3">
-              <a
-                href={getWhatsAppUrl("hero")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#0F2647] text-white text-sm font-semibold px-5 py-2.5 rounded-full"
-              >
+              <a href={getWhatsAppUrl("hero")} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#FF7A00] text-white text-sm font-bold px-5 py-2.5 rounded-full">
                 <WaIcon />
-                Consultar Grátis
+                Simular Agora
               </a>
             </div>
           </div>
@@ -90,19 +73,9 @@ function WaIcon() {
     </svg>
   );
 }
-
 function BurgerIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-      <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  );
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6"><path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" /></svg>;
 }
-
 function XIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
-      <path strokeLinecap="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  );
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6"><path strokeLinecap="round" d="M6 18L18 6M6 6l12 12" /></svg>;
 }
