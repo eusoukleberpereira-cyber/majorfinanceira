@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 const passos = [
@@ -22,43 +23,60 @@ export function ComoFunciona() {
   return (
     <section id="como-funciona" className="bg-[#F7F7F7] py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A]">
-            Como contratar o Consignado Major
-          </h2>
-          <p className="mt-4 text-[#666] text-lg max-w-xl mx-auto">
-            3 passos simples. Da simulação ao dinheiro na conta, tudo pelo celular.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
-          <div className="hidden md:block absolute top-10 left-[calc(16.66%+3rem)] right-[calc(16.66%+3rem)] h-0.5 bg-[#FF7A00]/20" />
-
-          {passos.map((passo) => (
-            <div key={passo.numero} className="relative flex flex-col items-center text-center">
-              <div className="relative mb-6 z-10">
-                <div className="w-20 h-20 rounded-full bg-white border-2 border-[#FF7A00]/30 flex items-center justify-center shadow-sm">
-                  <span className="text-[#FF7A00] font-bold text-2xl">{passo.numero}</span>
-                </div>
-              </div>
-              <h3 className="text-[#1A1A1A] font-bold text-xl mb-3">{passo.titulo}</h3>
-              <p className="text-[#666] text-base leading-relaxed max-w-xs mx-auto">{passo.descricao}</p>
+          {/* Esquerda — foto */}
+          <div className="hidden lg:block relative">
+            <Image
+              src="/foto-como-contratar.jpg"
+              alt="Cliente MajorFinanceira contratando consignado pelo celular"
+              width={560}
+              height={580}
+              className="w-full h-[540px] object-cover rounded-3xl shadow-lg"
+            />
+            <div className="absolute bottom-8 right-8 bg-white rounded-2xl shadow-xl px-5 py-4">
+              <p className="text-[#1A1A1A] font-bold text-sm">✅ 100% pelo celular</p>
+              <p className="text-[#999] text-xs mt-0.5">Sem sair de casa · Sem burocracia</p>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="mt-14 text-center">
-          <a
-            href={getWhatsAppUrl("hero")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#FF7A00] hover:bg-[#E56D00] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-          >
-            <WaIcon />
-            Iniciar pelo WhatsApp
-          </a>
-          <p className="mt-3 text-[#999] text-sm">Gratuito · Sem compromisso</p>
+          {/* Direita — passos */}
+          <div>
+            <span className="text-[#FF7A00] font-semibold text-sm uppercase tracking-widest">
+              Simples assim
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-10">
+              Como contratar o Consignado Major
+            </h2>
+
+            <div className="space-y-8">
+              {passos.map((passo, i) => (
+                <div key={passo.numero} className="flex items-start gap-5">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-[#FFF3E8] border-2 border-[#FF7A00]/30 flex items-center justify-center">
+                    <span className="text-[#FF7A00] font-bold text-base">{passo.numero}</span>
+                  </div>
+                  <div className={i < passos.length - 1 ? "pb-8 border-b border-gray-200 flex-1" : "flex-1"}>
+                    <h3 className="text-[#1A1A1A] font-bold text-xl mb-1">{passo.titulo}</h3>
+                    <p className="text-[#666] leading-relaxed">{passo.descricao}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10">
+              <a
+                href={getWhatsAppUrl("hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#FF7A00] hover:bg-[#E56D00] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <WaIcon />
+                Iniciar pelo WhatsApp
+              </a>
+              <p className="mt-3 text-[#999] text-sm">Gratuito · Sem compromisso</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

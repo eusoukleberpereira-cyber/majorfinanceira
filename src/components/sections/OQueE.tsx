@@ -1,9 +1,12 @@
+import Image from "next/image";
+
 export function OQueE() {
   return (
     <section id="oqueé" className="bg-white py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
+          {/* Esquerda — texto */}
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#1A1A1A] leading-tight">
               O que é o Empréstimo Consignado?
@@ -38,21 +41,34 @@ export function OQueE() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 flex flex-wrap gap-8 pt-8 border-t border-gray-100">
+              {[
+                { numero: "18+", label: "Bancos parceiros" },
+                { numero: "84x", label: "Parcelas no INSS" },
+                { numero: "35%", label: "Da margem" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-2xl font-bold text-[#FF7A00]">{stat.numero}</p>
+                  <p className="text-xs text-[#999] mt-0.5">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { numero: "18+", label: "Bancos parceiros", sublabel: "BMG, Bradesco, Pan, Caixa e mais" },
-              { numero: "84x", label: "Parcelas máximas", sublabel: "Para aposentados e pensionistas INSS" },
-              { numero: "35%", label: "Da margem consignável", sublabel: "Percentual máximo do benefício" },
-              { numero: "24h", label: "Resposta rápida", sublabel: "Aprovação no mesmo dia em muitos casos" },
-            ].map((item) => (
-              <div key={item.label} className="bg-[#F7F7F7] rounded-2xl p-6 border border-gray-100">
-                <p className="text-3xl font-bold text-[#FF7A00]">{item.numero}</p>
-                <p className="text-sm font-semibold text-[#1A1A1A] mt-1">{item.label}</p>
-                <p className="text-xs text-[#999] mt-1 leading-relaxed">{item.sublabel}</p>
-              </div>
-            ))}
+          {/* Direita — foto */}
+          <div className="hidden lg:block relative">
+            <Image
+              src="/foto-oqueE.jpg"
+              alt="Aposentada feliz após contratar crédito consignado"
+              width={560}
+              height={540}
+              className="w-full h-[520px] object-cover rounded-3xl shadow-lg"
+            />
+            <div className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl px-5 py-4">
+              <p className="text-[#1A1A1A] font-bold text-sm">✅ Nome negativado pode contratar</p>
+              <p className="text-[#999] text-xs mt-0.5">A garantia é o seu benefício ou salário</p>
+            </div>
           </div>
 
         </div>
