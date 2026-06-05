@@ -1,70 +1,58 @@
+import { Shield, Zap, Smartphone, TrendingDown } from "lucide-react";
+
 const vantagens = [
   {
-    titulo: "Menores taxas do mercado",
-    descricao: "Negociamos as melhores condições com os maiores bancos para você pagar menos.",
+    icon: TrendingDown,
+    titulo: "Menor taxa do mercado",
+    descricao: "Negociamos com os maiores bancos para garantir a melhor condição para o seu perfil.",
   },
   {
-    titulo: "100% digital — sem sair de casa",
-    descricao: "Todo o processo pelo celular. Do pedido à assinatura, sem precisar se deslocar.",
+    icon: Smartphone,
+    titulo: "Contratação 100% digital",
+    descricao: "Sem sair de casa. Todo o processo pelo celular, da proposta à assinatura do contrato.",
   },
   {
-    titulo: "Atendimento humano personalizado",
-    descricao: "Nada de robô ou espera. Você fala com uma pessoa real que entende a sua situação.",
+    icon: Zap,
+    titulo: "Dinheiro rápido",
+    descricao: "Aprovação ágil e crédito na conta em até 5 dias úteis. Em muitos casos, no mesmo dia.",
   },
   {
-    titulo: "Aprovação em minutos",
-    descricao: "Análise ágil e resposta rápida. Sem enrolação, sem burocracia desnecessária.",
-  },
-  {
-    titulo: "Parcelas descontadas no benefício",
-    descricao: "Desconto automático em folha ou benefício. Sem preocupação com boletos ou atrasos.",
-  },
-  {
-    titulo: "Correspondente autorizado pelos maiores bancos",
-    descricao: "Operamos com BMG, Pan, Facta, Caixa, Banco do Brasil e Itaú Consignado.",
+    icon: Shield,
+    titulo: "Análise simplificada",
+    descricao: "Sem burocracia. Atendimento humano que entende sua situação e encontra a melhor solução.",
   },
 ];
 
 export function Vantagens() {
   return (
-    <section className="bg-[#C9960A] py-20 sm:py-24">
+    <section id="vantagens" className="bg-white py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-white font-semibold text-sm uppercase tracking-widest mb-3">
-            Nossas vantagens
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1200]">
-            Por Que Escolher a MajorFinanceira?
+          <span className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest">
+            Por que a MajorFinanceira
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
+            Vantagens que fazem a diferença
           </h2>
-          <p className="mt-4 text-[#1A1200]/65 text-lg max-w-xl mx-auto">
-            Mais do que crédito — uma experiência de atendimento que respeita você.
-          </p>
         </div>
 
-        {/* Grid de vantagens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {vantagens.map((item) => (
-            <div
-              key={item.titulo}
-              className="flex gap-4 bg-white/15 border border-white/20 rounded-2xl p-6 hover:bg-white/22 transition-colors duration-200"
-            >
-              <div className="shrink-0 mt-0.5">
-                <div className="w-6 h-6 rounded-full bg-[#0F2647]/15 flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 text-[#0F2647]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {vantagens.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.titulo}
+                className="bg-[#F5F8FF] rounded-2xl p-7 border border-transparent hover:border-[#E5E7EB] hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#0F2647] flex items-center justify-center mb-5">
+                  <Icon className="w-6 h-6 text-white" strokeWidth={1.75} />
                 </div>
+                <h3 className="text-[#0F2647] font-bold text-lg leading-snug mb-2">{item.titulo}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.descricao}</p>
               </div>
-              <div>
-                <h3 className="text-[#1A1200] font-semibold text-base leading-snug mb-1">
-                  {item.titulo}
-                </h3>
-                <p className="text-[#1A1200]/60 text-sm leading-relaxed">{item.descricao}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

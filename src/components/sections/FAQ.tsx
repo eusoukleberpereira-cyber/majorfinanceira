@@ -36,47 +36,50 @@ const perguntas = [
     resposta:
       "Sim! Você pode solicitar a quitação antecipada a qualquer momento. Nesse caso, os juros são recalculados proporcionalmente ao período restante, gerando economia. É um direito garantido pela legislação brasileira.",
   },
+  {
+    pergunta: "Meu nome está negativado. Posso contratar?",
+    resposta:
+      "Em muitos casos, sim! Como a garantia do consignado é o próprio benefício ou salário, os bancos costumam aprovar mesmo para clientes com restrições no CPF. Entre em contato e verifique sua situação com nosso especialista.",
+  },
 ];
 
 export function FAQ() {
   return (
-    <section className="bg-[#F0F4F9] py-20 sm:py-24">
+    <section id="faq" className="bg-[#F5F8FF] py-20 sm:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-[#C9960A] font-semibold text-sm uppercase tracking-widest mb-3">
+          <span className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest">
             Tire suas dúvidas
-          </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
-            Perguntas Frequentes
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
+            Perguntas frequentes
           </h2>
-          <p className="mt-4 text-[#4A5568] text-lg">
+          <p className="mt-4 text-gray-500 text-lg">
             Não encontrou o que procura?{" "}
             <a
               href={getWhatsAppUrl("faq")}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0F2647] font-semibold underline underline-offset-2 hover:text-[#C9960A] transition-colors"
+              className="text-[#0F2647] font-semibold underline underline-offset-2 hover:text-[#C9952A] transition-colors"
             >
               Fale com um especialista.
             </a>
           </p>
         </div>
 
-        {/* Accordion */}
         <div className="space-y-2">
           {perguntas.map((item) => (
             <details
               key={item.pergunta}
-              className="group bg-white border border-[#D1DCE8]/60 rounded-xl overflow-hidden"
+              className="group bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm"
             >
               <summary className="flex items-center justify-between gap-4 cursor-pointer px-6 py-5 list-none select-none">
                 <span className="text-[#0F2647] font-semibold text-base leading-snug">
                   {item.pergunta}
                 </span>
                 <svg
-                  className="w-5 h-5 text-[#C9960A] shrink-0 transition-transform duration-200 group-open:rotate-180"
+                  className="w-5 h-5 text-[#C9952A] shrink-0 transition-transform duration-200 group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -85,7 +88,7 @@ export function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <p className="px-6 pb-5 text-[#4A5568] leading-relaxed text-sm">
+              <p className="px-6 pb-5 text-gray-500 leading-relaxed text-sm">
                 {item.resposta}
               </p>
             </details>

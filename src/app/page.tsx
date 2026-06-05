@@ -1,7 +1,10 @@
+import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
-import { Publicos } from "@/components/sections/Publicos";
-import { ComoFunciona } from "@/components/sections/ComoFunciona";
+import { OQueE } from "@/components/sections/OQueE";
 import { Vantagens } from "@/components/sections/Vantagens";
+import { ComoUsarDinheiro } from "@/components/sections/ComoUsarDinheiro";
+import { ComoFunciona } from "@/components/sections/ComoFunciona";
+import { Publicos } from "@/components/sections/Publicos";
 import { BancosParceiros } from "@/components/sections/BancosParceiros";
 import { Depoimentos } from "@/components/sections/Depoimentos";
 import { FAQ } from "@/components/sections/FAQ";
@@ -12,11 +15,14 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 export default function Home() {
   return (
     <>
+      <Header />
       <main>
         <Hero />
-        <Publicos />
-        <ComoFunciona />
+        <OQueE />
         <Vantagens />
+        <ComoUsarDinheiro />
+        <ComoFunciona />
+        <Publicos />
         <BancosParceiros />
         <Depoimentos />
         <FAQ />
