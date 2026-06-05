@@ -61,7 +61,7 @@ export function Servidores() {
               height={540}
               className="w-full h-[520px] object-cover object-top rounded-3xl shadow-lg"
             />
-            <div className="absolute top-8 left-8 bg-white rounded-2xl shadow-xl px-5 py-4">
+            <div className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl px-5 py-4">
               <p className="text-[#1A1A1A] font-bold text-sm">🏛️ Servidores conveniados</p>
               <p className="text-[#999] text-xs mt-0.5">Municipal · Estadual · Federal · SIAPE</p>
             </div>
