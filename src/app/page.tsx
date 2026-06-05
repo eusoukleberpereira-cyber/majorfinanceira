@@ -1,6 +1,7 @@
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { OQueE } from "@/components/sections/OQueE";
+import { Servidores } from "@/components/sections/Servidores";
 import { Vantagens } from "@/components/sections/Vantagens";
 import { ComoUsarDinheiro } from "@/components/sections/ComoUsarDinheiro";
 import { ComoFunciona } from "@/components/sections/ComoFunciona";
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero />
         <OQueE />
+        <Servidores />
         <Vantagens />
         <ComoUsarDinheiro />
         <ComoFunciona />
