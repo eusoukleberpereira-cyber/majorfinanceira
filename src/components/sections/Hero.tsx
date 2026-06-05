@@ -3,35 +3,38 @@ import { getWhatsAppUrl } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#0F2647] py-16 sm:py-20 lg:py-24 overflow-hidden relative">
+      {/* Decoração de fundo sutil */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-white/3 blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Esquerda — texto */}
           <div>
-            <span className="inline-block bg-[#FBF1DC] text-[#C9952A] text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+            <span className="inline-block bg-[#C9952A]/20 text-[#C9952A] text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6 border border-[#C9952A]/30">
               Correspondente Bancário Autorizado
             </span>
 
-            <h1 className="text-4xl sm:text-5xl xl:text-[3.25rem] font-bold text-[#0F2647] leading-[1.15] mb-5">
-              Empréstimo Consignado com as{" "}
-              <span className="text-[#C9952A]">Menores Taxas</span>
+            <h1 className="text-4xl sm:text-5xl xl:text-[3.25rem] font-bold text-white leading-[1.15] mb-5">
+              Seu salário e sua margem valem mais no{" "}
+              <span className="text-[#C9952A]">Consignado Major!</span>
             </h1>
 
-            <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
-              Atendemos Aposentados do INSS, Servidores Públicos, Militares e Trabalhadores CLT.
-              Aprovação rápida, 100% digital e atendimento humano de verdade.
+            <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
+              Simples, rápido e com as menores taxas do mercado. Atendemos Aposentados,
+              Pensionistas, Servidores Públicos, Militares e CLT.
             </p>
 
-            <div className="flex flex-wrap gap-8 mb-10 pb-10 border-b border-gray-100">
+            <div className="flex flex-wrap gap-8 mb-10 pb-10 border-b border-white/10">
               {[
                 { value: "Até 35%", label: "da margem disponível" },
                 { value: "Até 84x", label: "parcelas no INSS" },
                 { value: "1 a 5 dias", label: "dinheiro na conta" },
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col">
-                  <span className="text-2xl font-bold text-[#0F2647]">{stat.value}</span>
-                  <span className="text-xs text-gray-500 mt-0.5">{stat.label}</span>
+                  <span className="text-2xl font-bold text-white">{stat.value}</span>
+                  <span className="text-xs text-white/50 mt-0.5">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -41,14 +44,14 @@ export function Hero() {
                 href={getWhatsAppUrl("hero")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-base px-7 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2.5 bg-[#C9952A] hover:bg-[#e0a830] text-white font-bold text-base px-7 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               >
                 <WaIcon />
-                Simule pelo WhatsApp
+                Simule seu Consignado!
               </a>
               <a
                 href="#como-funciona"
-                className="inline-flex items-center gap-2 text-[#0F2647] hover:text-[#C9952A] font-semibold text-base px-2 py-4 transition-colors"
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white font-semibold text-base px-2 py-4 transition-colors"
               >
                 Como funciona
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -65,12 +68,12 @@ export function Hero() {
               alt="Aposentada feliz com crédito consignado aprovado"
               width={540}
               height={520}
-              className="w-full h-[520px] object-cover rounded-3xl"
+              className="w-full h-[500px] object-cover rounded-3xl"
               priority
             />
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl px-6 py-4 flex items-center gap-4 whitespace-nowrap">
-              <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center shrink-0">
-                <svg className="w-5 h-5 text-[#25D366]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <div className="w-10 h-10 rounded-full bg-[#C9952A]/15 flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-[#C9952A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -84,16 +87,16 @@ export function Hero() {
         </div>
 
         {/* Linha de confiança */}
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6">
           {[
-            { icon: "🏦", label: "6 bancos parceiros" },
+            { icon: "🏦", label: "18+ bancos parceiros" },
             { icon: "📱", label: "100% digital" },
             { icon: "👤", label: "Atendimento humano" },
             { icon: "⚡", label: "Resposta no mesmo dia" },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2.5">
               <span className="text-xl">{item.icon}</span>
-              <span className="text-sm text-gray-600 font-medium">{item.label}</span>
+              <span className="text-sm text-white/60 font-medium">{item.label}</span>
             </div>
           ))}
         </div>

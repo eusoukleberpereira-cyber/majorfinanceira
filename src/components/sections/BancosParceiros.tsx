@@ -1,10 +1,8 @@
 const bancos = [
-  { nome: "BMG", bg: "bg-[#E8F0F8]", text: "text-[#003B6F]" },
-  { nome: "Banco Pan", bg: "bg-[#FFF0E8]", text: "text-[#E85D04]" },
-  { nome: "Facta", bg: "bg-[#EEF0FF]", text: "text-[#3730A3]" },
-  { nome: "Caixa Econômica", bg: "bg-[#E8F5E9]", text: "text-[#1B5E20]" },
-  { nome: "Banco do Brasil", bg: "bg-[#FFFDE8]", text: "text-[#5D4037]" },
-  { nome: "Itaú Consignado", bg: "bg-[#FFF3E0]", text: "text-[#E65100]" },
+  "BMG", "Bradesco", "BRB", "BV", "C6 Bank",
+  "Caixa Econômica", "CashMe", "Crefaz", "Daycoval", "Digio",
+  "FACTA", "Imbursa", "Mercantil", "Neon", "Banco Pan",
+  "Paraná Banco", "PicPay", "Safra",
 ];
 
 export function BancosParceiros() {
@@ -13,30 +11,33 @@ export function BancosParceiros() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-10">
-          <p className="text-gray-400 text-sm uppercase tracking-widest font-medium mb-2">
+          <p className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest mb-2">
             Operamos com
           </p>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0F2647]">
             Os maiores bancos do mercado
           </h2>
           <p className="mt-3 text-gray-500 text-base max-w-lg mx-auto">
-            Mais opções de crédito para você ter sempre as melhores condições.
+            Mais de 18 bancos parceiros para você ter sempre as melhores condições de crédito.
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-3">
           {bancos.map((banco) => (
             <div
-              key={banco.nome}
-              className={`${banco.bg} ${banco.text} rounded-full px-6 py-3 font-semibold text-sm border border-current/10`}
+              key={banco}
+              className="bg-white border border-gray-200 hover:border-[#C9952A]/40 hover:shadow-sm rounded-full px-5 py-2.5 text-[#0F2647] font-semibold text-sm transition-all duration-200"
             >
-              {banco.nome}
+              {banco}
             </div>
           ))}
+          <div className="bg-[#0F2647] rounded-full px-5 py-2.5 text-white font-semibold text-sm">
+            + outros
+          </div>
         </div>
 
         <p className="text-center text-gray-400 text-xs mt-8">
-          Correspondente Bancário Autorizado — operamos sob a regulamentação do Banco Central do Brasil
+          Correspondente Bancário Autorizado — CNPJ 14.626.010/0001-41 — Resolução CMN nº 4.935/2021
         </p>
       </div>
     </section>

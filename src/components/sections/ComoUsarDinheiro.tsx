@@ -1,28 +1,25 @@
 const usos = [
-  { emoji: "💳", titulo: "Quitar dívidas", desc: "Limpe o nome e saia do cheque especial ou cartão caro" },
-  { emoji: "🏥", titulo: "Saúde", desc: "Consultas, exames, cirurgias e medicamentos" },
-  { emoji: "🏠", titulo: "Reforma da casa", desc: "Deixe sua casa do jeito que você sempre quis" },
-  { emoji: "✈️", titulo: "Viagens", desc: "Visite a família ou descanse onde merece" },
-  { emoji: "🎓", titulo: "Educação", desc: "Cursos e formação para você ou seus filhos" },
+  { emoji: "💳", titulo: "Quitar dívidas", desc: "Saia do cheque especial e do cartão caro" },
+  { emoji: "🏥", titulo: "Saúde", desc: "Consultas, exames e medicamentos" },
+  { emoji: "✈️", titulo: "Faça uma viagem", desc: "Descanse ou visite quem você ama" },
+  { emoji: "🎁", titulo: "Presenteie alguém", desc: "Datas especiais e momentos felizes" },
   { emoji: "📈", titulo: "Investimento", desc: "Faça o dinheiro trabalhar para você" },
+  { emoji: "🏠", titulo: "Pague suas contas", desc: "Reforma, aluguel ou imprevistos" },
+  { emoji: "🎓", titulo: "Educação", desc: "Cursos e formação para você ou seus filhos" },
   { emoji: "🛟", titulo: "Emergências", desc: "Imprevistos sem desespero e sem juros abusivos" },
-  { emoji: "🎁", titulo: "Datas especiais", desc: "Aniversários, Natal e momentos que merecem comemoração" },
 ];
 
 export function ComoUsarDinheiro() {
   return (
-    <section className="bg-[#F5F8FF] py-20 sm:py-24">
+    <section className="bg-[#0F2647] py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
-          <span className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest">
-            Liberdade de escolha
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
-            Como usar seu crédito?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+            Como posso usar o dinheiro do meu Consignado?
           </h2>
-          <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
-            O dinheiro é seu — use como quiser, sem restrições e sem precisar explicar nada.
+          <p className="mt-4 text-white/60 text-lg max-w-2xl mx-auto">
+            O Crédito Consignado Major é pra você usar da melhor maneira possível.
           </p>
         </div>
 
@@ -30,11 +27,11 @@ export function ComoUsarDinheiro() {
           {usos.map((item) => (
             <div
               key={item.titulo}
-              className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:border-[#0F2647]/20 hover:shadow-md transition-all duration-200"
+              className="bg-white/8 hover:bg-white/12 border border-white/10 rounded-2xl p-6 text-center transition-all duration-200 hover:-translate-y-1"
             >
               <span className="text-4xl block mb-3">{item.emoji}</span>
-              <h3 className="text-[#0F2647] font-bold text-base mb-1">{item.titulo}</h3>
-              <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+              <h3 className="text-white font-bold text-base mb-1">{item.titulo}</h3>
+              <p className="text-white/55 text-xs leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
