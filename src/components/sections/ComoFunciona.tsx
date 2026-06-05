@@ -1,24 +1,21 @@
-import { MessageCircle, FileText, Banknote } from "lucide-react";
+import Image from "next/image";
 import { getWhatsAppUrl } from "@/lib/constants";
 
 const passos = [
   {
     numero: "01",
-    icon: MessageCircle,
     titulo: "Fale com um especialista",
-    descricao: "Entre em contato pelo WhatsApp. Vamos entender sua situação e apresentar as melhores opções disponíveis para você.",
+    descricao: "Entre em contato pelo WhatsApp. Vamos entender sua situação e apresentar as melhores opções disponíveis.",
   },
   {
     numero: "02",
-    icon: FileText,
     titulo: "Envie os documentos",
-    descricao: "RG, CPF, comprovante de renda e de endereço. Tudo pelo celular, sem precisar se deslocar a nenhum lugar.",
+    descricao: "RG, CPF, comprovante de renda e endereço. Tudo pelo celular, sem precisar sair de casa.",
   },
   {
     numero: "03",
-    icon: Banknote,
     titulo: "Dinheiro na sua conta",
-    descricao: "Após a aprovação e assinatura digital, o crédito cai na sua conta em até 5 dias úteis.",
+    descricao: "Após aprovação e assinatura digital, o crédito cai na sua conta em até 5 dias úteis.",
   },
 ];
 
@@ -26,52 +23,61 @@ export function ComoFunciona() {
   return (
     <section id="como-funciona" className="bg-white py-20 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div className="text-center mb-16">
-          <span className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest">
-            Simples assim
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647]">
-            Como contratar
-          </h2>
-          <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
-            3 passos simples. Da consulta ao dinheiro na conta, tudo pelo celular.
-          </p>
-        </div>
+          {/* Esquerda — foto */}
+          <div className="relative hidden lg:block">
+            <Image
+              src="/hero-aposentado.jpg"
+              alt="Cliente MajorFinanceira contratando consignado pelo celular"
+              width={540}
+              height={560}
+              className="w-full h-[520px] object-cover rounded-3xl"
+            />
+            {/* Badge flutuante */}
+            <div className="absolute bottom-8 right-8 bg-white rounded-2xl shadow-xl px-5 py-4">
+              <p className="text-[#0F2647] font-bold text-sm">✅ 100% pelo celular</p>
+              <p className="text-gray-400 text-xs mt-0.5">Sem sair de casa · Sem burocracia</p>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
-          <div className="hidden md:block absolute top-12 left-[calc(16.66%+3rem)] right-[calc(16.66%+3rem)] h-px bg-gray-200" />
+          {/* Direita — passos + CTA */}
+          <div>
+            <span className="text-[#C9952A] font-semibold text-sm uppercase tracking-widest">
+              Simples assim
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F2647] mb-10">
+              Como contratar o Consignado Major
+            </h2>
 
-          {passos.map((passo) => {
-            const Icon = passo.icon;
-            return (
-              <div key={passo.numero} className="relative flex flex-col items-center text-center">
-                <div className="relative mb-6 z-10">
-                  <div className="w-24 h-24 rounded-full bg-[#F5F8FF] border-2 border-[#E5E7EB] flex items-center justify-center">
-                    <Icon className="w-9 h-9 text-[#0F2647]" strokeWidth={1.5} />
+            <div className="space-y-8">
+              {passos.map((passo, i) => (
+                <div key={passo.numero} className="flex items-start gap-5">
+                  <div className="shrink-0 w-12 h-12 rounded-full bg-[#FBF1DC] border-2 border-[#C9952A]/30 flex items-center justify-center">
+                    <span className="text-[#C9952A] font-bold text-base">{passo.numero}</span>
                   </div>
-                  <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-[#C9952A] flex items-center justify-center text-white text-xs font-bold">
-                    {passo.numero}
-                  </span>
+                  <div className={i < passos.length - 1 ? "pb-8 border-b border-gray-100 flex-1" : "flex-1"}>
+                    <h3 className="text-[#0F2647] font-bold text-xl mb-1">{passo.titulo}</h3>
+                    <p className="text-gray-500 leading-relaxed">{passo.descricao}</p>
+                  </div>
                 </div>
-                <h3 className="text-[#0F2647] font-bold text-xl mb-3">{passo.titulo}</h3>
-                <p className="text-gray-500 text-base leading-relaxed max-w-xs mx-auto">{passo.descricao}</p>
-              </div>
-            );
-          })}
-        </div>
+              ))}
+            </div>
 
-        <div className="mt-14 text-center">
-          <a
-            href={getWhatsAppUrl("hero")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#0F2647] hover:bg-[#1A3A6B] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-          >
-            <WaIcon />
-            Iniciar agora pelo WhatsApp
-          </a>
-          <p className="mt-3 text-gray-400 text-sm">Gratuito · Sem compromisso</p>
+            <div className="mt-10">
+              <a
+                href={getWhatsAppUrl("hero")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#C9952A] hover:bg-[#e0a830] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <WaIcon />
+                Iniciar agora pelo WhatsApp
+              </a>
+              <p className="mt-3 text-gray-400 text-sm">Gratuito · Sem compromisso</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
