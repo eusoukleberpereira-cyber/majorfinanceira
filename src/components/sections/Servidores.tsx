@@ -59,7 +59,7 @@ export function Servidores() {
               alt="Professora servidora pública sorrindo em sala de aula"
               width={560}
               height={540}
-              className="w-full h-[520px] object-cover rounded-3xl shadow-lg"
+              className="w-full h-[520px] object-cover object-top rounded-3xl shadow-lg"
             />
             <div className="absolute top-8 left-8 bg-white rounded-2xl shadow-xl px-5 py-4">
               <p className="text-[#1A1A1A] font-bold text-sm">🏛️ Servidores conveniados</p>
